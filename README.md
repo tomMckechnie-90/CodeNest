@@ -70,7 +70,7 @@ As a user, I want to log in and out securely, so that I can ensure my account is
 
 #### Responsive Front-End (Must Haves)
 
-As a user, I want to view and interact with a responsive front-end, so that I can have a seamless experience on any device.
+As a user, I want to interact with a responsive front-end, so that I can have a seamless experience on any device.
 
 #### CRUD Functionality (Must Haves)
 
