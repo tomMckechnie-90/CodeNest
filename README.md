@@ -1,131 +1,230 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CODENEST
 
-Welcome USER_NAME,
+![CODENEST LOGO](/Documentation/Text-Logo.PNG)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to CODENEST – a dynamic platform tailored for the software development community. This forum is designed to foster collaboration, share knowledge, and engage in meaningful discussions around all things software development.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+What Is CODENEST
 
-## Gitpod Reminders
+The forum provides a space where developers of all skill levels can connect, seek advice, share insights, and grow together. It includes features such as user authentication, discussion threads and like/dislike for a streamlined and intuitive user experience.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Why I Built It
 
-`python3 -m http.server`
+I wanted to create a space where developers can easily connect, share their knowledge, and help each other out. Building this forum was a chance for me to put my coding skills to the test and learn more about what it takes to make something useful and user-friendly.
 
-A blue button should appear to click: _Make Public_,
+Image will be added here using.[amiresponsive](https://ui.dev/amiresponsive)
 
-Another blue button should appear to click: _Open Browser_.
+Link to the live site here once deployed 
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
 
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
 ---
 
-Happy coding!
+## CONTENTS
+
+* [User Experience](#user-experience-ux)
+  * [User Stories](#user-stories)
+
+* [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+
+* [Features](#features)
+  * [General Features on Each Page](#general-features-on-each-page)
+  * [Future Implementations](#future-implementations)
+  * [Accessibility](#accessibility)
+
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+
+* [Deployment & Local Development](#deployment--local-development)
+  * [Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)
+
+* [Testing](#testing)
+
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
+
+---
+
+## User Experience (UX)
+
+### User Stories
+
+#### User Registration (Must Haves)
+
+As a user, I want to register an account, so that I can login and create my own posts and interact with others.
+
+#### Secure Login/Logout (Must Haves)
+
+As a user, I want to log in and out securely, so that I can ensure my account is safe and private.
+
+#### Responsive Front-End (Must Haves)
+
+As a user, I want to view and interact with a responsive front-end, so that I can have a seamless experience on any device.
+
+#### CRUD Functionality (Must Haves)
+
+As a user, I want to create, read, update, and delete (CRUD) posts and comments, so that I can manage my them effectively.
+
+#### Form Validation (Must Haves)
+
+As a user, I want forms with validation, so that I can avoid errors when submitting information.
+
+#### Clear Login State (Must Haves)
+
+As a user, I want clear visual indicators of my login status, so that I know if I am logged in or not.
+
+#### Profile Customization (Should have)
+
+As a user, I want to customize my profile, so that I can personalize my experience.
+
+#### Social Media Integration (Could Have)
+
+As a user, I want to link my social media accounts, so that I can log in or share content easily.
+
+
+## Design
+
+
+### Colour Scheme
+
+![CODENEST Colour Scheme](/Documentation/Colour%20scheme.jpg)
+
+The reason I chose this colour schem is it has high contrast for readability.
+The black and white provide excellent contrast, ensuring that text or interactive elements are easily readable.
+The addition of Seasalt softens the harshness of pure white, giving a balanced and approachable feel to the design.
+
+
+### Typography
+
+I imported the following monospaced fonts from [Google Fonts](https://fonts.google.com/):
+
+Courier Prime (Heading Font) - Ideal for headings due to its bold and impactful style that draws attention.
+
+Fira Code (Sub Heading Font) - Slightly rounded shapes give it a friendly and approachable appearance.
+
+Source Code Pro (Paragraph Font) - A professional and clean look, especially suitable for development-related content.
+
+
+![Heading Font](/Documentation/Courier%20Prime%20(Heading).jpg)
+![Sub heading Font](/Documentation/Fira%20Code%20(Sub%20Headings).jpg)
+![Paragraph Font](/Documentation/Source%20Code%20Pro%20(Paragraphs).jpg)
+
+
+### Imagery
+
+Use this section to explain what sort of imagery you plan to use through your site.
+
+### Wireframes
+
+![Home Page Wireframe](/Documentation/Home%20Page.jpg)
+![Login Page Wireframe](/Documentation/Login%20Page.jpg)
+![Logout Page Wireframe](/Documentation/Logout%20page.jpg)
+![Sign Up Page Wireframe](/Documentation/Sign%20Up%20page.jpg)
+
+
+
+## Features
+
+This section can be used to explain what pages your site is made up of.
+
+### General features on each page
+
+If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
+
+I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
+
+### Future Implementations
+
+What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+
+### Accessibility
+
+Be an amazing developer and get used to thinking about accessibility in all of your projects!
+
+This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
+
+Have you used icons and added aria-labels to enable screen readers to understand these?
+Have you ensured your site meets the minimum contrast requirements?
+Have you chosen fonts that are dyslexia/accessible friendly?
+
+Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
+
+## Technologies Used
+
+👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
+
+### Languages Used
+
+* HTML
+* CSS
+* PYTHON
+
+### Frameworks, Libraries & Programs Used
+
+* Django
+* Bootstrap v5
+* GitHub
+* Balsamic
+
+A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
+
+## Deployment & Local Development
+
+👩🏻‍💻 View an example of a completed Deployment & Local Development section [here]()
+
+### Deployment
+
+Include instructions here on how to deploy your project. 
+
+### Local Development
+
+The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
+
+#### How to Fork
+
+Place instructions on how to fork your project here.
+
+#### How to Clone
+
+Place instructions on how to clone your project here.
+
+## Testing
+
+Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
+
+Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
+  
+Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+
+## Credits
+
+👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
+
+The Credits section is where you can credit all the people and sources you used throughout your project.
+
+### Code Used
+
+If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
+
+### Content
+
+Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
+
+###  Media
+
+If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
+  
+###  Acknowledgments
+
+If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
