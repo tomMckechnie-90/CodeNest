@@ -9,3 +9,5 @@ class HomePage(TemplateView):
     template_name = 'base.html'
 
 
+
+
