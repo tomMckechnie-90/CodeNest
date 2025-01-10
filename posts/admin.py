@@ -8,4 +8,4 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     list_filter = ('created_at',)
 
-    # test commit
+    
