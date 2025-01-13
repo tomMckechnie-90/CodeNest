@@ -131,6 +131,7 @@ Use this section to explain what sort of imagery you plan to use through your si
 ![Login Page Wireframe](/Documentation/Login%20Page.jpg)
 ![Logout Page Wireframe](/Documentation/Logout%20page.jpg)
 ![Sign Up Page Wireframe](/Documentation/Sign%20Up%20page.jpg)
+![Sign Up Page Wireframe](/Documentation/Post%20detail%20page.jpg)
 
 
 
