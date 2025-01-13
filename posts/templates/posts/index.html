@@ -9,8 +9,8 @@
     <div class="card-body">
         <a href="{% url 'post_detail' post.slug %}">
             <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.excerpt }}</p>
         </a>
+        <p class="card-text">{{ post.excerpt }}</p>
         <p class="text-muted small">Author: {{ post.author }}</p>
         <p class="text-muted small">Posted on: {{ post.created_at }} </p>
         <i class="fa-solid fa-thumbs-up fa-xs"></i> <i class="fa-solid fa-thumbs-down fa-xs"></i> <i
