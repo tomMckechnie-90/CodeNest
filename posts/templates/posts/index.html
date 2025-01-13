@@ -10,6 +10,9 @@
         <a href="{% url 'post_detail' post.slug %}">
             <h5 class="card-title">{{ post.title }}</h5>
         </a>
+        {% if not post.slug %}
+        <p class="text-danger">Error: Post slug is missing!</p>
+        {% endif %}
         <p class="card-text">{{ post.excerpt }}</p>
         <p class="text-muted small">Author: {{ post.author }}</p>
         <p class="text-muted small">Posted on: {{ post.created_at }} </p>
