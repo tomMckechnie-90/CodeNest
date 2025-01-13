@@ -12,5 +12,27 @@
         </article>
     </div>
 </div>
-
+<div class="comments-section">
+    <div class="card">
+        <div class="card-body">
+            <!-- For loop to iterate through each comment in comments -->
+             <h2>Comments:</h2>
+            {% for comment in comments %}
+            <div class="comments">
+                <p class="font-weight-bold">
+                    {{ comment.user.username }}
+                    <span class="font-weight-normal">
+                        {{ comment.created_at }}
+                    </span> wrote:
+                </p>
+                <div id="comment{{ comment.id }}">
+                    {{ comment.content | linebreaks }}
+                </div>
+                {% empty %}
+                <p>No comments yet. Be the first to comment!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
