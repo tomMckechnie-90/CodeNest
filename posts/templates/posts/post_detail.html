@@ -33,7 +33,7 @@
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
                 <p class="font-weight-bold">
-                    {{ comment.author }}
+                    {{ comment.user }}
                     <span class="font-weight-normal">
                         {{ comment.created_at }}
                     </span> wrote:
