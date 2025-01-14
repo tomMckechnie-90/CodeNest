@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <div class="card">
     <div class="card-body">
@@ -30,7 +31,7 @@
         <div class="card-body">
             {% for comment in comments %}
             <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
+          {% if not comment.approved and comment.user == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
                 <p class="font-weight-bold">
                     {{ comment.user }}
@@ -41,14 +42,30 @@
                 <div id="comment{{ comment.id }}">
                     {{ comment.content | linebreaks }}
                 </div>
-                {% if not comment.approved and comment.author == user %}
-                <p class="approval">
+                {% if not comment.approved and comment.user == user %}
+                <p class="text-muted">
                     This comment is awaiting approval
                 </p>
                 {% endif %}
             </div>
             <!-- Our for loop ends here -->
             {% endfor %}
+        </div>
+    </div>
+    <div class="col-md4 card mb-4 mt-3">
+        <div class="card-body">
+            {% if user.is_authenticated %}
+            <h3>Leave a comment</h3>
+            <p>Posting as: {{ user.username }}</p>
+            <form method="post" id="commentform" style="margin-top: 1.3em;">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+            {% else %}
+            <p>Fancy leaving a comement? <a href="{% url 'account_login' %}">Login</a> or <a
+                    href="{% url 'account_signup' %}">Signup</a></p>
+                    {% endif %}
         </div>
     </div>
 </div>
