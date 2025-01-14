@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,8 @@
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><button type="button" class="btn btn-dark">Create a Post</button></a>
+                            <a class="nav-link" href="#"><button type="button" class="btn btn-dark">Create a
+                                    Post</button></a>
                         </li>
                         {% else %}
                         <li class="nav-item">
@@ -52,10 +54,46 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible
+              fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         {% endblock %}
     </header>
-    <main class="container-mt4">
-        {% block content %}{% endblock %}
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <div class="card">
+            <div class="card-body">
+                <p class="text-end m3">Hi {{ user.username }}</p>
+                <p class="text-end m3"><a href="{% url 'account_logout' %}">Logout</a></p>
+                <p class="text-end m3">Link to profile page here</p>
+                <p class="text-end m3">Have some wisdom to share? <a href="#"><button type="button"
+                            class="btn btn-dark">Share it!</button></a></p>
+            </div>
+        </div>
+        {% else %}
+        <div class="card">
+            <div class="card-body">
+                <p class="text-end m3">You are logged in. <a href="{% url 'account_login' %}">Log in</a></p>
+                <p class="text-end m3">Dont have an account? <a href="{% url 'account_signup' %}">Sign up here</a></p>
+                {% endif %}
+            </div>
+        </div>
+
+
+
+        {% block content %}
+        <!-- Content from other templates goes here -->
+        {% endblock %}
     </main>
     <footer class="bg-body-tertiary py-3 text-center">
         {% block footer %}
@@ -68,8 +106,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <!-- Font awesome -->
-        <script src="https://kit.fontawesome.com/d8a7f5f7e5.js" crossorigin="anonymous"></script>
-        {% block scripts %}{% endblock %}
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/d8a7f5f7e5.js" crossorigin="anonymous"></script>
+    {% block scripts %}{% endblock %}
 </body>
+
 </html>
