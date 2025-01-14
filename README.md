@@ -72,6 +72,10 @@ As a user, I want to log in and out securely, so that I can ensure my account is
 
 As a user, I want to interact with a responsive front-end, so that I can have a seamless experience on any device.
 
+#### Comment on Posts (Must Have)
+
+As a logged-in user, I want to comment on posts, so that I can share my thoughts and interact with others.
+
 #### CRUD Functionality (Must Haves)
 
 As a user, I want to create, read, update, and delete (CRUD) posts and comments, so that I can manage my them effectively.
@@ -83,6 +87,10 @@ As a user, I want forms with validation, so that I can avoid errors when submitt
 #### Clear Login State (Must Haves)
 
 As a user, I want clear visual indicators of my login status, so that I know if I am logged in or not.
+
+#### Publish Own Post (Should have)
+
+As a logged-in user, I want to publish my own post, so that I can share my thoughts and ideas with others.
 
 #### Profile Customization (Should have)
 
