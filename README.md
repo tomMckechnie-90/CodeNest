@@ -149,9 +149,23 @@ This section can be used to explain what pages your site is made up of.
 
 ### General features on each page
 
-If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
+#### User Management
 
-I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
+More details to follow
+
+#### Community Engagement
+
+More details to follow
+
+#### Content Moderation
+
+More details to follow
+
+#### Accessibility
+
+More details to follow
+
+Screen shots of each page here once finished [amiresponsive](https://ui.dev/amiresponsive) 
 
 ### Future Implementations
 
