@@ -19,7 +19,13 @@ def post_detail(request, slug):
     # fetches the post by its slug
     # queryset = Post.objects.filter(status=1)
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.all() # Fetch related comments using the `related_name='comments'`
-    return render(request, 'posts/post_detail.html', {'post': post, 'comments': comments})
+    comments = post.comments.all().order_by("-created_at") # Fetch related comments using the `related_name='comments'`
+    comment_count = post.comments.filter(approved=True).count()
+    return render(request, 
+                'posts/post_detail.html', {
+                    'post': post, 
+                    'comments': comments,
+                    'comment_count': comment_count,
+                    })
 
 
