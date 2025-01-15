@@ -38,10 +38,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'create_post' %}"><button type="button" class="btn btn-dark">Create a
-                                    Post</button></a>
-                        </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
@@ -74,10 +70,18 @@
         <div class="card">
             <div class="card-body">
                 <p class="text-end m3">Hi {{ user.username }}</p>
-                <p class="text-end m3"><a href="{% url 'account_logout' %}">Logout</a></p>
-                <p class="text-end m3">Link to profile page here</p>
-                <p class="text-end m3">Have some wisdom to share? <a href="{% url 'create_post' %}"><button type="button"
-                            class="btn btn-dark">Share it!</button></a></p>
+                <a href="{% url 'account_logout' %}">
+                    <p class="text-end m3">
+                        <button type="button" class="btn btn-dark">Logout</button>
+                    </p>
+                </a>
+                <a href="{% url 'view_profile' %}">
+                    <p class="text-end m3">
+                        <button type="button" class="btn btn-dark">Your Profile</button>
+                    </p>
+                </a>
+                <p class="text-end m3"><a href="{% url 'create_post' %}"><button type="button" class="btn btn-dark">Add
+                            a Post</button></a></p>
             </div>
         </div>
         {% else %}
