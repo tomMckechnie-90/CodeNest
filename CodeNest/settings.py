@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'code-nest-b4f5033f8eff.herokuapp.com']
 
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'posts',
+    'user_profiles',
 ]
 
 SITE_ID = 1
