@@ -109,6 +109,9 @@
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/d8a7f5f7e5.js" crossorigin="anonymous"></script>
     {% block scripts %}{% endblock %}
+    {% block extras %}
+    <script src="{% static 'js/comments.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>
