@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import TemplateView
 from django.contrib import messages
@@ -64,3 +64,20 @@ def comment_edit(request, comment_id):
             messages.add_message(request, messages.ERROR, 'ERROR! comment was not updated!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[comment.post.slug]))
+
+
+
+def comment_delete(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    post = comment.post
+
+    if comment.user == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Your comment has been deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('post_detail', args=[comment.post.slug]))
+
+
+
