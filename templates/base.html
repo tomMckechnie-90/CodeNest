@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><button type="button" class="btn btn-dark">Create a
+                            <a class="nav-link" href="{% url 'create_post' %}"><button type="button" class="btn btn-dark">Create a
                                     Post</button></a>
                         </li>
                         {% else %}
@@ -76,7 +76,7 @@
                 <p class="text-end m3">Hi {{ user.username }}</p>
                 <p class="text-end m3"><a href="{% url 'account_logout' %}">Logout</a></p>
                 <p class="text-end m3">Link to profile page here</p>
-                <p class="text-end m3">Have some wisdom to share? <a href="#"><button type="button"
+                <p class="text-end m3">Have some wisdom to share? <a href="{% url 'create_post' %}"><button type="button"
                             class="btn btn-dark">Share it!</button></a></p>
             </div>
         </div>

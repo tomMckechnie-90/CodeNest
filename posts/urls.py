@@ -8,4 +8,5 @@ urlpatterns = [
         views.comment_edit, name='comment_edit'),
     path('post/delete_comment/<int:comment_id>',
         views.comment_delete, name='comment_delete'),
+    path('create/', views.create_post, name='create_post'),
 ]
