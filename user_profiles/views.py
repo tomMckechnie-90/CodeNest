@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import UserProfileForm
 
 # Create your views here.
@@ -15,6 +16,7 @@ def edit_profile(request):
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Your Profile has been updated.')
             return redirect('view_profile')
     else:
         form = UserProfileForm(instance=profile)
