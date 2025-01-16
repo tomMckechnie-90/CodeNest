@@ -48,6 +48,10 @@ Link to the live site here once deployed
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
 
+
+    * [Bugs](#bugs)
+
+
 * [Testing](#testing)
 
 * [Credits](#credits)
@@ -223,6 +227,23 @@ Place instructions on how to fork your project here.
 #### How to Clone
 
 Place instructions on how to clone your project here.
+
+## Bugs
+![Script bug](/Documentation/script%20bug%20project%20board.png)
+
+
+![Script bug](/Documentation/Script%20bug.png)
+
+While testing my features as I usaully do when I open up my workspace in the morning, I realised for some reason my comments.js script had stopped loading on the browser I tried resolving this issue my self by looking back on my commit history to see if I had changed anything by mistake for example deleting the script tag in error or script tag in the wrong place but that was not the issue, after scratching my head for arounf 20 minutes I reached out to the coding coach and class channel. Spencer our SME got in touch:
+
+
+I took his advice and the script was loading again! Thank you Spencer!
+![Script bug](/Documentation/Spencer%20answer.png)
+
+![Script bug](/Documentation/Script%20bug%20console%20clear.png)
+
+
+
 
 ## Testing
 
