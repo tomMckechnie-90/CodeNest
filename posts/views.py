@@ -97,32 +97,26 @@ def create_post(request):
     
     return render(request, 'posts/create_post.html', {'form': form})
 
-@login_required
 def edit_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id, author=request.user)
-
+    post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 'Your post has been updated!')
-            return redirect('post_detail', post_id=post.id)
+            return redirect('post_detail', slug=post.slug) # sends you back to the post detail page once edited
     else:
         form = PostForm(instance=post)
-    
-    return render(request, 'posts/edit_post.html', {'form': form, 'post': post})
+    return render(request, 'posts/edit_post.html', {'form': form, 'post': post}) # Pass post to template
 
-@login_required
+
 def delete_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id, author=request.user)
-
-    if request.method == 'POST':
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'POST': # Confirm you want to delete
         post.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your post has been deleted!')
-        return redirect('home')
-    
-    return render(request, 'posts/delete_confirm.html', {'post': post})
-        
+        return redirect('home') # Rerturns to the list of posts
+    return render(request, 'posts/delete_post.html', {'post': post})
+
+
 
 
 
