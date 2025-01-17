@@ -13,7 +13,7 @@
         {% if not post.slug %}
         <p class="text-danger">Error: Post slug is missing!</p>
         {% endif %}
-        <p class="card-text">{{ post.excerpt }}</p>
+        <p class="card-text">{{ post.content|truncatewords:20 }}</p>
         <img 
         src="{{ post.author.profile.profile_picture.url }}" 
         alt="{{ post.author.username }}" 

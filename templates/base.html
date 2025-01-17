@@ -71,6 +71,12 @@
         <div class="card">
             <div class="card-body">
                 <p class="text-end m3">Hi {{ user.username }}</p>
+                <img
+                src="{{ user.profile.profile_picture.url }}" 
+                alt="{{user.username }}" 
+                class="profile-picture" 
+                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
+            >
                 <a href="{% url 'account_logout' %}">
                     <p class="text-end m3">
                         <button type="button" class="btn btn-dark">Logout</button>
