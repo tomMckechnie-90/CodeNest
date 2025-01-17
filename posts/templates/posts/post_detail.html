@@ -22,7 +22,6 @@
             {% endif %}
         </article>
     </div>
-
 </div>
 </div>
 <!-- Displaying count of comments -->
@@ -36,6 +35,15 @@
         <hr>
     </div>
 </div>
+<!-- Like Button -->
+<form action="{% url 'like_post' post.id %}" method="POST">
+    {% csrf_token %}
+    {% if user in post.likes.all %}
+    <button type="submit" class="btn btn-danger">Unlike</button>
+    {% else %}
+    <button type="submit" class="btn btn-primary">Like</button>
+    {% endif %}
+</form>
 <!-- Displaying Comments -->
 <div class="row">
     <div class="col-md-8 card mb-4  mt-3 ">
@@ -48,12 +56,8 @@
           {% if not comment.approved and comment.user == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
                 <p class="font-weight-bold">
-                    <img
-                    src="{{ user.profile.profile_picture.url }}" 
-                    alt="{{ user.username }}" 
-                    class="profile-picture" 
-                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
-                >
+                    <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}" class="profile-picture"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                     {{ comment.user }}
                     <span class="font-weight-normal">
                         {{ comment.created_at }}

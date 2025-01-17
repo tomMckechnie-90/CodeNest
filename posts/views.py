@@ -116,6 +116,15 @@ def delete_post(request, post_id):
         return redirect('home') # Rerturns to the list of posts
     return render(request, 'posts/delete_post.html', {'post': post})
 
+def like_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user) # Unlike if post is liked
+    else:
+        post.likes.add(request.user) # User can like the post
+    
+    return redirect('post_detail', slug=post.slug)
+
 
 
 

@@ -16,6 +16,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
+    likes = models.ManyToManyField(User, related_name='liked_posts') # this will track the likes
 
     class Meta:
         ordering = ["-created_at"]
@@ -27,6 +28,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+    
+    def total_likes(self):
+        return self.likes.count() # A helper method to count the total number of likes for a post.
 
 
 # The comments model
