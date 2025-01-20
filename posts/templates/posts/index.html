@@ -16,7 +16,9 @@
         <p class="card-text">{{ post.content|truncatewords:20 }}</p>
         <img src="{{ post.author.profile.profile_picture.url }}" alt="{{ post.author.username }}"
             class="profile-picture" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-        <p class="text-muted small">Author: {{ post.author }}</p>
+        <a href="{% url 'view_profile' post.author.username %}">
+            <p class="text-muted small">Author: {{ post.author }}</p>
+        </a>
         <p class="text-muted small">Posted on: {{ post.created_at }} </p>
         <!-- Display the total number of likes -->
         <p>Total Likes: {{ post.total_likes }}</p>

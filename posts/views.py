@@ -114,7 +114,7 @@ def delete_post(request, post_id):
     if request.method == 'POST': # Confirm you want to delete
         post.delete()
         return redirect('home') # Rerturns to the list of posts
-    return render(request, 'posts/delete_post.html', {'post': post})
+    # return render(request, 'posts/delete_post.html', {'post': post})
 
 
 @login_required
