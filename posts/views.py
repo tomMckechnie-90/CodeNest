@@ -113,6 +113,7 @@ def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST': # Confirm you want to delete
         post.delete()
+        messages.add_message(request, messages.SUCCESS, 'Your post has been deleted!')
         return redirect('home') # Rerturns to the list of posts
     # return render(request, 'posts/delete_post.html', {'post': post})
 
