@@ -26,7 +26,7 @@ def post_detail(request, slug):
     # queryset = Post.objects.filter(status=1)
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.all().order_by("-created_at") # Fetch related comments using the `related_name='comments'`
-    comment_count = post.comments.filter(approved=True).count()
+    comment_count = post.comments.count()
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -36,11 +36,11 @@ def post_detail(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Your comment has been submitted and awaiting approval'
+                'Your comment has been submitted'
             )
     comment_form = CommentForm()
     return render(request, 
-                'posts/post_detail.html', {
+                'posts/post_detail.html',  {
                     'post': post, 
                     'comments': comments,
                     'comment_count': comment_count,
