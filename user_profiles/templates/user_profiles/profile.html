@@ -7,10 +7,10 @@
             <p>{{ profile_user.profile.bio|default:"No bio available." }}</p>
         </div>
             <div class="col-12 col-md-4 text-center">
-                {% if profile_user.profile.profile_picture %}
-                <img src="{{ profile_user.profile.profile_picture.url }}" alt="Profile Picture">
+                {% if "placeholder" in profile_user.profile_picture.url %}
+                <img src="{% static 'images/nobody.jpg' %}" class="profile-image" alt="placeholder image">
                 {% else %}
-                <p>No profile picture available</p>
+                <img src="{{ profile_user.profile.profile_picture.url }}" alt="Profile Picture">
                 {% endif %}
             </div>
     </div>

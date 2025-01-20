@@ -229,6 +229,7 @@ Place instructions on how to fork your project here.
 Place instructions on how to clone your project here.
 
 ## Bugs
+### Loading static bug
 ![Script bug](/Documentation/script%20bug%20project%20board.png)
 
 
@@ -241,6 +242,26 @@ I took his advice and the script was loading again! Thank you Spencer!
 ![Script bug](/Documentation/Spencer%20answer.png)
 
 ![Script bug](/Documentation/Script%20bug%20console%20clear.png)
+
+### Editing profile bug
+
+I came across this bug trying to get a default placeholder profile image to load on a user's profile if they did not upload one. 
+
+I clicked on the save changes button which I nicknamed "Buggy button" while debugging.
+
+![Editing profile bug](/Documentation/Buggy%20button.jpg)
+
+Which then showed this error message.
+
+![Editing profile bug](/Documentation/error%20message%20.jpg)
+
+I got stuck in and tried resolving the issue, but was having no joy. So I turned to ChatGPT by copy and pasting the error message and after a few more prompts I got this solution. which redirects the user to their profile page (view_profile) and passes the required username parameter when the save button is clicked.
+
+![Editing profile bug](/Documentation/line%20of%20code%20(AI%20solution).jpg)
+
+And yes it worked! Thank you AI. 
+
+![Editing profile bug](/Documentation/Success%20message.jpg)
 
 
 
