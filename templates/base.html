@@ -35,10 +35,33 @@
                             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li> <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}"
+                                        class="profile-picture"
+                                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                                    {{ user.username }}</li>
+                                <li> <a href="{% url 'view_profile' user.username %}">
+                                        <p>View Profile</p>
+                                    </a></li>
+                                <li> <a href="{% url 'edit_profile' %}">
+                                        <p>Edit Profile</p>
+                                    </a></li>
+                                    <li> <a href="{% url 'account_logout' %}">
+                                        <p>Logout</p>
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li> <a href="{% url 'create_post' %}">
+                                        <p>Post Something</p>
+                                    </a></li>
+                            </ul>
                         </li>
-
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
@@ -51,33 +74,7 @@
                 </div>
             </div>
         </nav>
-        <div class="d-flex justify-content-end">
-        <div class="text-end">
-            {% if user.is_authenticated %}
-                <div class="col align-self-end">
-                    <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}" class="profile-picture"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-                    {{ user.username }}
-                </div>
-                <br>
-                <div class="col align-self-end">
-                    <a href="{% url 'edit_profile' %}">
-                        <p>Edit Profile</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="{% url 'view_profile' user.username %}">
-                        <p>View Profile</p>
-                    </a>
-                </div>
-                <div>
-                <a href="{% url 'create_post' %}">
-                    <p>Post Something</p>
-                </a>
-                </div>
-                {% endif %}
         </div>
-    </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -94,41 +91,6 @@
         {% endblock %}
     </header>
     <main>
-
-
-        <!-- {% if user.is_authenticated %}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <p class="text-end m3">Hi {{ user.username }}</p>
-                <img
-                src="{{ user.profile.profile_picture.url }}" 
-                alt="{{ user.username }}" 
-                class="profile-picture" 
-                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
-            >
-                <a href="{% url 'account_logout' %}">
-                    <p class="text-end m3">
-                        <button type="button" class="btn btn-dark">Logout</button>
-                    </p>
-                </a>
-                <a href="#">
-                    <p class="text-end m3">
-                        <button type="button" class="btn btn-dark">Your Profile</button>
-                    </p>
-                </a>
-                <p class="text-end m3"><a href="{% url 'create_post' %}"><button type="button" class="btn btn-dark">Add
-                            a Post</button></a></p>
-            </div>
-        </div>
-        {% else %}
-        <div class="card">
-            <div class="card-body">
-                <p class="text-end m3">You are logged in. <a href="{% url 'account_login' %}">Log in</a></p>
-                <p class="text-end m3">Dont have an account? <a href="{% url 'account_signup' %}">Sign up here</a></p>
-                {% endif %}
-            </div>
-        </div> -->
-
 
         {% block content %}
         <!-- Content from other templates goes here -->
