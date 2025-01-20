@@ -125,7 +125,7 @@ def like_post(request, post_id):
     else:
         post.likes.add(request.user) # User can like the post
     
-    return redirect('post_detail', slug=post.slug)
+    return redirect(request.META.get('HTTP_REFERER', 'index')) # Stays on the current page when like button is clicked.
 
 
 

@@ -14,26 +14,24 @@
         <p class="text-danger">Error: Post slug is missing!</p>
         {% endif %}
         <p class="card-text">{{ post.content|truncatewords:20 }}</p>
-        <img 
-        src="{{ post.author.profile.profile_picture.url }}" 
-        alt="{{ post.author.username }}" 
-        class="profile-picture" 
-        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
-    >
+        <img src="{{ post.author.profile.profile_picture.url }}" alt="{{ post.author.username }}"
+            class="profile-picture" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
         <p class="text-muted small">Author: {{ post.author }}</p>
         <p class="text-muted small">Posted on: {{ post.created_at }} </p>
-        <!-- Like Button -->
-<!-- Like Button -->
+        <!-- Display the total number of likes -->
+        <p>Total Likes: {{ post.total_likes }}</p>
 
-<form action="{% url 'like_post' post.id %}" method="POST">
-    {% csrf_token %}
-    {% if user.is_authenticated %}
-    {% elif user in post.likes.all %}
-    <button type="submit" class="btn btn-danger">Unlike</button>
-    {% else %}
-    <button type="submit" class="btn btn-primary">Like</button>
-    {% endif %}
-</form>
+        <!-- Like Button -->
+        <form action="{% url 'like_post' post.id %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            {% if user in post.likes.all %}
+            <button type="submit" class="btn btn-danger">Unlike</button>
+            {% else %}
+            <button type="submit" class="btn btn-primary">Like</button>
+            {% endif %}
+            {% endif %}
+        </form>
 
         <!-- <i class="fa-solid fa-thumbs-up fa-xs"></i> <i class="fa-solid fa-thumbs-down fa-xs"></i> <i
             class="fa-solid fa-comment fa-xs"></i> -->

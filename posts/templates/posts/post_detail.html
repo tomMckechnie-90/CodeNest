@@ -30,21 +30,25 @@
         <strong class="text-secondary">
             <i class="far fa-comments"></i> {{ comment_count }}
         </strong>
+        <!-- Display the total number of likes -->
+        <p>Total Likes: {{ post.total_likes }}</p>
     </div>
     <div class="col-12">
         <hr>
     </div>
 </div>
-<!-- Like Button -->
 
+
+<!-- Like Button -->
 <form action="{% url 'like_post' post.id %}" method="POST">
-    {% csrf_token %}
-    {% if user.is_authenticated %}
-    {% elif user in post.likes.all %}
+{% csrf_token %}
+{% if user.is_authenticated %}
+    {% if user in post.likes.all %}
     <button type="submit" class="btn btn-danger">Unlike</button>
     {% else %}
     <button type="submit" class="btn btn-primary">Like</button>
     {% endif %}
+{% endif %}
 </form>
 <!-- Displaying Comments -->
 <div class="row">
