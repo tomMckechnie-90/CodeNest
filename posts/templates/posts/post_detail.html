@@ -36,9 +36,11 @@
     </div>
 </div>
 <!-- Like Button -->
+
 <form action="{% url 'like_post' post.id %}" method="POST">
     {% csrf_token %}
-    {% if user in post.likes.all %}
+    {% if user.is_authenticated %}
+    {% elif user in post.likes.all %}
     <button type="submit" class="btn btn-danger">Unlike</button>
     {% else %}
     <button type="submit" class="btn btn-primary">Like</button>
@@ -121,7 +123,7 @@
     </div>
 </div>
 
-{% endblock content %}
+{% endblock %}
 
 {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
