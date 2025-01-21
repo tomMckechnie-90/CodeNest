@@ -8,6 +8,12 @@
         <p class="text-muted small">Author: {{ post.author }}</p>
         <p class="text-muted small">Posted on: {{ post.created_at }}</p>
 
+        <!-- Post Image -->
+        <div class="text-center my-3">
+            <img src="{{ post.get_image_url }}" alt="{{ post.title }}" class="img-fluid"
+                style="max-height: 400px; object-fit: cover;">
+        </div>
+
         <article class="card-text">
             {{ post.content | safe }}
             {% if user.is_authenticated and post.author == user %}
@@ -15,7 +21,8 @@
                 <a href="{% url 'edit_post' post.id %}">
                     <button class="btn btn-dark" type="submit">Edit</button>
                 </a>
-                <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal{{ post.id }}">
+                <button class="btn btn-danger" type="button" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal{{ post.id }}">
                     Delete
                 </button>
             </div>
@@ -41,14 +48,14 @@
 
 <!-- Like Button -->
 <form action="{% url 'like_post' post.id %}" method="POST">
-{% csrf_token %}
-{% if user.is_authenticated %}
+    {% csrf_token %}
+    {% if user.is_authenticated %}
     {% if user in post.likes.all %}
     <button type="submit" class="btn btn-danger">Unlike</button>
     {% else %}
     <button type="submit" class="btn btn-primary">Like</button>
     {% endif %}
-{% endif %}
+    {% endif %}
 </form>
 <!-- Displaying Comments -->
 <div class="row">
@@ -62,7 +69,8 @@
           {% if not comment.approved and comment.user == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
                 <p class="font-weight-bold">
-                    <img src="{{ comment.user.profile.profile_picture.url }}" alt="{{ user.username }}" class="profile-picture"
+                    <img src="{{ comment.user.profile.profile_picture.url }}" alt="{{ user.username }}"
+                        class="profile-picture"
                         style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                     {{ comment.user }}
                     <span class="font-weight-normal">
@@ -128,7 +136,8 @@
 </div>
 
 <!--  Delete confirmation Modal for users posts using just HTML   -->
-<div class="modal fade" id="deleteModal{{ post.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ post.id }}" aria-hidden="true">
+<div class="modal fade" id="deleteModal{{ post.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ post.id }}"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

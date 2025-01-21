@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-
+from cloudinary.models import CloudinaryField
+from cloudinary import CloudinaryImage
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -13,6 +14,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', default=1)
     content = models.TextField()
+    image = CloudinaryField('image', default='default-post_e4kyej', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
@@ -31,6 +33,15 @@ class Post(models.Model):
     
     def total_likes(self):
         return self.likes.count() # A helper method to count the total number of likes for a post.
+    
+    def get_image_url(self):
+        # Return the correct URL for the image, whether it's Cloudinary or default
+        if isinstance(self.image, str):
+            return CloudinaryImage(self.image).build_url()
+        elif self.image:
+            return self.image.url
+        else:
+            return CloudinaryImage('default-post_e4kyej').build_url()
 
 
 # The comments model
