@@ -4,44 +4,47 @@
 
 <!-- Content for this file starts here -->
 {% for post in posts %}
-<div class="card" style="width: 18rem;">
-    <img src="{{ post.get_image_url }}" class="card-img-top" alt="{{ post.title }}"
-        style="height: 200px; object-fit: cover;">
-    <div class="card-body">
-        <a href="{% url 'post_detail' post.slug %}">
-            <h5 class="card-title">{{ post.title }}</h5>
-        </a>
-        {% if not post.slug %}
-        <p class="text-danger">Error: Post slug is missing!</p>
-        {% endif %}
-        <p class="card-text">{{ post.content|truncatewords:20 }}</p>
-        <img src="{{ post.author.profile.profile_picture.url }}" alt="{{ post.author.username }}"
-            class="profile-picture" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-        <a href="{% url 'view_profile' post.author.username %}">
-            <p class="text-muted small">Author: {{ post.author }}</p>
-        </a>
-        <p class="text-muted small">Posted on: {{ post.created_at }} </p>
-        <!-- Display the total number of likes -->
-        <p>Total Likes: {{ post.total_likes }}</p>
-        <p>Total Comments: {{ post.comment_count }}</p>
-
-        <!-- Like Button -->
-        <form action="{% url 'like_post' post.id %}" method="POST">
-            {% csrf_token %}
-            {% if user.is_authenticated %}
-            {% if user in post.likes.all %}
-            <button type="submit" class="btn btn-danger">Unlike</button>
-            {% else %}
-            <button type="submit" class="btn btn-primary">Like</button>
+<div class="container px-4 d-flex justify-content-center">
+    <div class="card w-75 mb-4">
+        <img src="{{ post.get_image_url }}" class="card-img-top" alt="{{ post.title }}"
+            style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+            <a href="{% url 'post_detail' post.slug %}">
+                <h5 class="card-title">{{ post.title }}</h5>
+            </a>
+            {% if not post.slug %}
+            <p class="text-danger">Error: Post slug is missing!</p>
             {% endif %}
-            {% endif %}
-        </form>
-
-        <!-- <i class="fa-solid fa-thumbs-up fa-xs"></i> <i class="fa-solid fa-thumbs-down fa-xs"></i> <i
-            class="fa-solid fa-comment fa-xs"></i> -->
+            <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+            <img src="{{ post.author.profile.profile_picture.url }}" alt="{{ post.author.username }}"
+                class="profile-picture" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+            <a href="{% url 'view_profile' post.author.username %}">
+                <p class="text-muted small">Author: {{ post.author }}</p>
+            </a>
+            <p class="text-muted small">Posted on: {{ post.created_at }} </p>
+            <!-- Display the total number of likes -->
+            <p>Total Likes: {{ post.total_likes }}</p>
+            <p>Total Comments: {{ post.comment_count }}</p>
+    
+            <!-- Like Button -->
+            <form action="{% url 'like_post' post.id %}" method="POST">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                {% if user in post.likes.all %}
+                <button type="submit" class="btn btn-danger">Unlike</button>
+                {% else %}
+                <button type="submit" class="btn btn-primary">Like</button>
+                {% endif %}
+                {% endif %}
+            </form>
+    
+            <!-- <i class="fa-solid fa-thumbs-up fa-xs"></i> <i class="fa-solid fa-thumbs-down fa-xs"></i> <i
+                class="fa-solid fa-comment fa-xs"></i> -->
+        </div>
+    
     </div>
-
 </div>
+
 {% endfor %}
 
 <!-- Content for this files stops here -->
