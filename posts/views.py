@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
 from .forms import PostForm
+from django.db.models import Count, Q
 
 # Create your views here.
 
@@ -17,8 +18,10 @@ class HomePage(TemplateView):
     template_name = 'base.html'
 
 def index(request):
-    posts = Post.objects.all()
-    return render(request, 'posts/index.html', {'posts': posts})
+        posts = Post.objects.annotate(
+        comment_count=Count('comments', filter=Q(comments__approved=True))  # Only count approved comments
+    )
+        return render(request, 'posts/index.html', {'posts': posts})
 
 
 def post_detail(request, slug):
