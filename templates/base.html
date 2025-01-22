@@ -50,12 +50,12 @@
 
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown px-2 d-none d-lg-block">
-                            <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}"
                                     class="rounded-circle"
                                     style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
-                                    <span class="ms-2">{{ user.username }}</span>
+                                <span class="ms-2">{{ user.username }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{% url 'view_profile' user.username %}"><i
@@ -114,7 +114,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible
+                    <div class="alert alert-success text-center {{ message.tags }} alert-dismissible
               fade show" id="msg" role="alert">
                         {{ message | safe }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

@@ -1,7 +1,68 @@
-h1 {
-    color: black;
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Vars */
+:root {
+    /* Colors */
+    --font-color: #100B00;    /* Smoky Black */
+    --highlight: #FFFFFF;          /* White */ 
+    --background: #f6f6f6;    /* Grey */
+
+
+    /* Fonts */
+    --font-heading: "Courier Prime", monospace;     /* For headings */
+    --font-subheading: "Fira Code", monospace;    /* For subheadings */
+    --font-paragraph: "Source Code Pro", monospace;    /* For paragraphs */
+
+
+    /* Font Sizes */
+    --font-size-small: 0.875rem;    /* Small text */
+    --font-size-medium: 1rem;    /* Default text size */
+    --font-size-large: 1.25rem;    /* Larger text */
+    --font-size-heading: 2rem;    /* Heading size */
+    --font-size-subheading: 1.5rem;    /* Subheading size */
+
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+
+    /* Borders */
+    --border-radius: 4px;
+
+    /* Shadows */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-default: all 0.3s ease;
 }
 
-body {
-    background-color: white;
+/* Global variables */
+
+h1 {
+    font-family: var(--font-heading);
+    color: var(--font-color);
+    font-size: var(--font-size-heading);
 }
+
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: var(--font-subheading);
+    color: var(--font-color);
+    font-size: var(--font-size-subheading);
+}
+
+p, a{
+    font-family: var(--font-paragraph);
+    font-size: var(--font-size-medium);
+}
+
+body{
+    color: var(--background); /* Grey */
+}
+
+
