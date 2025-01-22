@@ -22,7 +22,7 @@
 <body>
     <header>
         {% block header %}
-        <nav class="navbar navbar-expand-lg custom-navbar mb-4">
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top mb-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">
                     CodeNest
@@ -131,7 +131,7 @@
         <!-- Content from other templates goes here -->
         {% endblock %}
     </main>
-    <footer class="py-3 text-center custom-navbar" >
+    <footer class="text-center custom-footer" >
         {% block footer %}
         <div class="container">
             <p>&copy; 2025 CodeNest. All Rights Reserved</p>

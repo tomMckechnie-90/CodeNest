@@ -78,12 +78,14 @@ body{
 .custom-navbar{
     background-color: var(--highlight);
     box-shadow: var(--box-shadow);
+    font-family: var(--font-paragraph);
 }
 
 /* footer styles */
-footer{
+.custom-footer{
     background-color: var(--highlight);
     box-shadow: var(--box-shadow);
+    padding: 25px;
 }
 
 .custom-navbar a:hover{
@@ -91,9 +93,12 @@ footer{
 }
 
 /* Card styles */
+
 .card{
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+    margin-top: 125px;
+    margin-bottom: 125px;
     width: 70%;
     display: flex;
     justify-content: center;
