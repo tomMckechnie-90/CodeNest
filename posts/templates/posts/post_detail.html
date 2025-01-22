@@ -15,7 +15,7 @@
         </div>
 
         <article class="card-text">
-            {{ post.content | safe }}
+            <p>{{ post.content | safe }}</p>
             {% if user.is_authenticated and post.author == user %}
             <div>
                 <a href="{% url 'edit_post' post.id %}">
