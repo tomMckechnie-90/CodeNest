@@ -22,46 +22,60 @@
 <body>
     <header>
         {% block header %}
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">CodeNest</a>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    CodeNest
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Visible on large screens and above -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item px-2 d-none d-lg-block">
+                            <a href="{% url 'create_post' %}">
+                                <button class="btn btn-dark" type="button">Create a Post</button>
+                            </a>
+                        </li>
+                        {% endif %}
                         <!-- Home Link -->
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <li class="nav-item px-2 d-none d-lg-block">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i
+                                    class="fa-solid fa-house fa-xl"></i></a>
                         </li>
 
-                        <!-- Profile Dropdown (Visible on lg and above) -->
                         {% if user.is_authenticated %}
-                        <li class="nav-item dropdown d-none d-lg-block">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <li class="nav-item dropdown px-2 d-none d-lg-block">
+                            <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img
-                                src="{{ user.profile.profile_picture.url }}"
-                                alt="{{ user.username }}"
-                                class="rounded-circle"
-                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;"
-                            >
-                            {{ user.username }}
+                                <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}"
+                                    class="rounded-circle"
+                                    style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
+                                    <span class="ms-2">{{ user.username }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{% url 'view_profile' user.username %}">View
-                                        Profile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                                <li><a class="dropdown-item" href="{% url 'view_profile' user.username %}"><i
+                                            class="fa-solid fa-circle-user fa-2xl px-3"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'edit_profile' %}"><i
+                                            class="fa-solid fa-pen fa-xl px-3"></i>Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'create_post' %}"><i
+                                            class="fa-solid fa-paper-plane fa-xl px-3"></i>Create a Post</a></li>
                                 <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="{% url 'create_post' %}">Post Something</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}"><i
+                                            class="fa-solid fa-right-from-bracket fa-xl px-3"></i>Logout</a></li>
+
                         </li>
                     </ul>
                     </li>
 
-                    <!-- Profile Link (Visible on small screens inside the collapse menu) -->
+                    <!-- Visible on smaller screens only -->
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
                     <li class="nav-item d-lg-none">
                         <a class="nav-link" href="{% url 'view_profile' user.username %}">View Profile</a>
                     </li>
@@ -78,7 +92,7 @@
                         <div class="mb-3 text-center">
                             <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}"
                                 class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
-                            <div>{{ user.username }}</div>
+
                         </div>
                     </li>
                     {% else %}
