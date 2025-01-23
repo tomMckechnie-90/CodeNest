@@ -130,6 +130,13 @@ body{
     margin: 0;
 }
 
+#profile-pic{
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    width: 60%;
+    margin: 0;
+}
+
 /* Like button */
 
 .like-text{
