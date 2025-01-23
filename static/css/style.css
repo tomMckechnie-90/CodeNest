@@ -111,13 +111,25 @@ body{
     width: 100%;
 }
 
-
+#edit-post-form{
+    width: 100%;
+}
 
 #post-image{
     box-shadow: var(--box-shadow);
     border-radius: 10px;
     width: 60%;
     margin: 0;
+}
+
+/* Like button */
+
+.like-text{
+    font-family: var(--font-paragraph);
+}
+
+.btn-edit{
+    font-display: var(--highlight);
 }
 
 

@@ -3,17 +3,19 @@
 {% load crispy_forms_tags %}
 
 
-<div class="container mt-5">
-    <h2>Edit Your Post</h2> 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-dark">Save Changes</button>
-    </form>
-    <a href="{% url 'post_detail' post.slug %}">
-        <button type="button" class="btn btn-dark">Cancel</button>
-    </a>
-</div>
+<div class="container d-flex justify-content-center">
+    <div class="card">
+        <h2>Edit Your Post</h2> 
+        <form id="edit-post-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-dark">Save Changes</button>
+            <a href="{% url 'post_detail' post.slug %}">
+                <button type="button" class="btn btn-dark">Cancel</button>
+            </a>
+        </form>
+    </div>
+</div> 
 
 
 

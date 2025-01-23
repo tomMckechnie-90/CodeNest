@@ -18,39 +18,44 @@
                 </a>
                 <p class="text-muted small">Posted on: {{ post.created_at }}</p>
                 {% if user.is_authenticated and post.author == user %}
-                <div>
+                <div class="mb-4">
                     <a href="{% url 'edit_post' post.id %}">
-                        <button class="btn btn-dark" type="submit">Edit</button>
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-pen-to-square fa-lg px-2"></i> Edit Post
+                        </button>
                     </a>
-                    <button class="btn btn-danger" type="button" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal{{ post.id }}">
-                        Delete
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal{{ post.id }}">
+                        <i class="fa-regular fa-trash-can fa-lg px-2"></i> Delete Post
                     </button>
                 </div>
                 {% endif %}
-                <!-- Displaying count of comments -->
-                <div class="container">
-                    <div class="col-12">
-                        <strong class="text-secondary">
-                            <i class="far fa-comments"></i> {{ comment_count }}
-                        </strong>
-                        <!-- Display the total number of likes -->
-                        <p>Total Likes: {{ post.total_likes }}</p>
+
+                <strong class="text-secondary">
+                    <i class="far fa-comments px-2"></i>{{ comment_count }}
+                    <i class="fa-regular fa-thumbs-up fa-lg px-2"></i>{{ post.total_likes }}
+                </strong>
+                <!-- Like Button -->
+                <div class="row mt-4">
+                    <div>
+                        <form action="{% url 'like_post' post.id %}" method="POST">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                            {% if user in post.likes.all %}
+                            <button type="submit" class="btn">
+                                <i class="fa-solid fa-thumbs-up fa-lg"></i>
+                            </button>
+                            <span class="like-text text-muted small">unlike</span>
+                            {% else %}
+                            <button type="submit" class="btn">
+                                <i class="fa-regular fa-thumbs-up fa-lg"></i>
+                            </button>
+                            <span class="like-text text-muted small">like</span>
+                            {% endif %}
+                            {% endif %}
+                        </form>
                     </div>
                 </div>
-                <!-- Like Button -->
-                <div class="container">
-                    <form action="{% url 'like_post' post.id %}" method="POST">
-                        {% csrf_token %}
-                        {% if user.is_authenticated %}
-                        {% if user in post.likes.all %}
-                        <button type="submit" class="btn btn-danger">Unlike</button>
-                        {% else %}
-                        <button type="submit" class="btn btn-primary">Like</button>
-                        {% endif %}
-                        {% endif %}
-                    </form>
-                </div>
+
                 <hr>
                 <!-- Comments form -->
                 <div class="container mt-4">
@@ -94,8 +99,8 @@
                         </p>
                         {% endif %}
                         {% if user.is_authenticated and comment.user == user %}
-                        <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                        <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                        <button class="btn btn-delete" comment_id="{{ comment.id }}"><i class="fa-regular fa-trash-can fa-lg p-2"></i>Delete</button>
+                        <button class="btn btn-edit" comment_id="{{ comment.id }}"><i class="fa-solid fa-pen-to-square fa-lg p-2"></i>Edit</button>
                         {% endif %}
                     </div>
                     <!-- Our for loop ends here -->
