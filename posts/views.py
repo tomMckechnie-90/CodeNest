@@ -106,6 +106,7 @@ def edit_post(request, post_id):
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, 'Your post has been updated!')
             return redirect('post_detail', slug=post.slug) # sends you back to the post detail page once edited
     else:
         form = PostForm(instance=post)

@@ -16,6 +16,9 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        <!-- Summernote CSS -->
+        <link href="/summernote/summernote-lite.css" rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
 
@@ -144,6 +147,10 @@
         crossorigin="anonymous"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/d8a7f5f7e5.js" crossorigin="anonymous"></script>
+
+        <!-- Summernote JavaScript -->
+        <script src="/summernote/summernote-lite.js"></script>
+
     {% block scripts %}{% endblock %}
     {% block extras %}
     <script src="{% static 'js/comments.js' %}"></script>

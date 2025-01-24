@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'code-nest-b4f5033f8eff.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','code-nest-b4f5033f8eff.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.codeinstitute-ide.net', 
@@ -65,7 +65,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootsrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [

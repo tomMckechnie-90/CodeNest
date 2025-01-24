@@ -19,7 +19,7 @@
                 <p class="text-muted small">Author: {{ post.author }}</p>
             </a>
             <a href="{% url 'post_detail' post.slug %}">
-                <p class="card-text">{{ post.content|truncatewords:50 }}</p>
+                <p class="card-text">{{ post.content|truncatewords:50|safe }}</p>
             </a>
             <br>
             <span><i class="far fa-comments fa-lg text-secondary px-2"></i>{{ post.comment_count }}</span>
