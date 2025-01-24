@@ -17,8 +17,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-        <!-- Summernote CSS -->
-        <link href="/summernote/summernote-lite.css" rel="stylesheet">
+    <!-- Summernote CSS -->
+    <link href="/summernote/summernote-lite.css" rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
 
@@ -113,7 +113,7 @@
 
 
         </div>
-        <div class="container">
+        <div class="container" id="msg-container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     {% for message in messages %}
@@ -134,7 +134,7 @@
         <!-- Content from other templates goes here -->
         {% endblock %}
     </main>
-    <footer class="text-center custom-footer" >
+    <footer class="text-center custom-footer">
         {% block footer %}
         <div class="container">
             <p>&copy; 2025 CodeNest. All Rights Reserved</p>
@@ -148,12 +148,13 @@
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/d8a7f5f7e5.js" crossorigin="anonymous"></script>
 
-        <!-- Summernote JavaScript -->
-        <script src="/summernote/summernote-lite.js"></script>
 
     {% block scripts %}{% endblock %}
     {% block extras %}
     <script src="{% static 'js/comments.js' %}"></script>
+    <!-- Summernote JavaScript -->
+    <script src="/summernote/summernote-lite.js"></script>
+
     {% endblock %}
 </body>
 
