@@ -80,6 +80,15 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+# Summernote configuration
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'airmode': True,
+    },
+    'width': '100%',
+    'height': '500',
+}
+
 ROOT_URLCONF = 'CodeNest.urls'
 
 TEMPLATES = [

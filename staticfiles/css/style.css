@@ -72,6 +72,7 @@ a:hover{
 
 body{
     background-color: var(--background);
+    padding-bottom: 120px;
 }
 
 /* Navbar styles */
@@ -84,8 +85,9 @@ body{
 /* footer styles */
 .custom-footer{
     background-color: var(--highlight);
-    box-shadow: var(--box-shadow);
-    padding: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 .custom-navbar a:hover{
@@ -156,7 +158,7 @@ body{
 @media (max-width: 768px) {
     .card {
         width: 90%;
-        margin-top: 75px;
+        margin-top: 30px;
         margin-bottom: 75px;
         padding: 15px;
     }
@@ -176,14 +178,17 @@ body{
     p {
         font-size: 0.875rem;
     }
+    .note-editor {
+        min-height: 150px; /* Adjust editor height as needed */
+    }
 }
 
 /* Mobiles */
 @media (max-width: 480px) {
     .card {
         width: 100%;
-        margin-top: 75px;
-        margin-bottom: 75px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         padding: 10px;
     }
 
@@ -202,4 +207,9 @@ body{
     p {
         font-size: 0.75rem;
     }
+
+    .note-editor {
+        display: none; /* Adjust editor height as needed */
+    }
 }
+
