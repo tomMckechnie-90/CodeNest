@@ -81,17 +81,17 @@
                     <div class="p-2 comments
                       {% if not comment.approved and comment.user == user %}
                       faded{% elif not comment.approved %} d-none{% endif %}">
-                        <p class="font-weight-bold">
+                        <p class="text-muted small">
                             <img src="{{ comment.user.profile.profile_picture.url }}" alt="{{ user.username }}"
                                 class="profile-picture"
                                 style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                 <a href="{% url 'view_profile' comment.user.username %}">
-                                    <p>{{ comment.user }}</p></a>
-                            <span class="font-weight-normal">
-                                {{ comment.created_at }}
-                            </span> wrote:
+                                    <p class="text-muted small">{{ comment.user }}</p></a>
+                            <span class="text-muted small">
+                                {{ comment.created_at }} wrote:
+                            </span> 
                         </p>
-                        <div id="comment{{ comment.id }}">
+                        <div id="comment{{ comment.id }}" class="commentText">
                             {{ comment.content | linebreaks }}
                         </div>
                         {% if not comment.approved and comment.user == user %}
