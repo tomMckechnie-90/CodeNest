@@ -63,7 +63,7 @@ p{
 
 a{
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--highlight);
 }
 
 a:hover{
@@ -81,6 +81,7 @@ body{
     box-shadow: var(--box-shadow);
     font-family: var(--font-paragraph);
 }
+
 
 /* footer styles */
 .custom-footer{
@@ -106,6 +107,30 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.card-title{
+    color: var(--font-color);
+}
+
+.card-title:hover{
+    text-decoration: underline;
+}
+
+.comment-user{
+    color: var(--font-color);
+}
+
+.comment-user:hover{
+    text-decoration: none;
+}
+
+.read-post-btn{
+    font-family: var(--font-paragraph);
+}
+
+.read-post-btn:hover{
+    text-decoration: none;
 }
 
 #post-detail-card {
