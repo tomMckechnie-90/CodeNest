@@ -63,7 +63,7 @@ p{
 
 a{
     text-decoration: none;
-    color: var(--highlight);
+    color: var(--font-color);
 }
 
 a:hover{
@@ -81,7 +81,6 @@ body{
     box-shadow: var(--box-shadow);
     font-family: var(--font-paragraph);
 }
-
 
 /* footer styles */
 .custom-footer{
@@ -208,6 +207,13 @@ body{
     }
 }
 
+@media (min-width: 768px) {
+    .read-post-btn{
+        width: 80%;
+    }
+
+}
+
 /* Mobiles */
 @media (max-width: 480px) {
     .card {
@@ -235,6 +241,10 @@ body{
 
     .note-editor {
         display: none; /* Adjust editor height as needed */
+    }
+
+    .read-post-btn{
+        margin: 0%;
     }
 }
 
