@@ -3,9 +3,9 @@
 
 <div class="container d-flex justify-content-center">
     <div class="card">
-            <h1>{{ profile_user.first_name }} {{ profile_user.last_name }}</h1>
             <h3>{{ profile_user.username }}'s Profile</h3>
             <img src="{{ profile_user.profile.get_profile_picture_url }}" id="post-image" alt="Profile Picture" class="mb-4">
+            <p>{{ profile_user.profile.first_name }} {{ profile_user.profile.last_name }}</p>
             <p>Date of Birth: {{ profile_user.profile.date_of_birth }}</p>
             <p>Gender: {{ profile_user.profile.gender }}</p>
             <p>{{ profile_user.profile.bio|default:"No bio available." }}</p>
