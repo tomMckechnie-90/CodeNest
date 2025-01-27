@@ -85,8 +85,8 @@ body{
 /* footer styles */
 .custom-footer{
     background-color: var(--highlight);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 14px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
