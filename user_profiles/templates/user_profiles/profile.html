@@ -8,7 +8,7 @@
             <p>{{ profile_user.profile.first_name }} {{ profile_user.profile.last_name }}</p>
             <p>Date of Birth: {{ profile_user.profile.date_of_birth }}</p>
             <p>Gender: {{ profile_user.profile.gender }}</p>
-            <p>{{ profile_user.profile.bio|default:"No bio available." }}</p>
+            <p>{{ profile_user.profile.bio|safe|default:"No bio available." }}</p>
             
     </div>
 </div>

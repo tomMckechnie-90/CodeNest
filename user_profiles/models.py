@@ -13,8 +13,8 @@ class UserProfile(models.Model):
 
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    first_name = models.CharField(max_length=50, default="John")
-    last_name = models.CharField(max_length=50, default="Doe")
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, null=True, blank=True)
     bio = models.TextField(blank=True, null=True)
