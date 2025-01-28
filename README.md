@@ -4,8 +4,6 @@
 
 Welcome to CODENEST – a dynamic platform tailored for the software development community. This forum is designed to foster collaboration, share knowledge, and engage in meaningful discussions around all things software development.
 
-View an example of a completed Deployment & Local Development section [here](https://code-nest-b4f5033f8eff.herokuapp.com/)
-
 What Is CODENEST
 
 The forum provides a space where developers of all skill levels can connect, seek advice, share insights, and grow together. It includes features such as user authentication, discussion threads and like/dislike for a streamlined and intuitive user experience.
