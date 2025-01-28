@@ -8,17 +8,22 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
+
 # The post model
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', default=1)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='posts', default=1)
     content = models.TextField()
-    image = CloudinaryField('image', default='default-post_e4kyej', blank=True, null=True)
+    image = CloudinaryField(
+        'image',
+        default='default-post_e4kyej',
+        blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    likes = models.ManyToManyField(User, related_name='liked_posts') # this will track the likes
+    likes = models.ManyToManyField(User, related_name='liked_posts')
 
     class Meta:
         ordering = ["-created_at"]
@@ -30,12 +35,13 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
-    
+
     def total_likes(self):
-        return self.likes.count() # A helper method to count the total number of likes for a post.
-    
+        # A helper method to count the total number of likes for a post.
+        return self.likes.count()
+
     def get_image_url(self):
-        # Return the correct URL for the image, whether it's Cloudinary or default
+        # Return the correct URL for the image
         if isinstance(self.image, str):
             return CloudinaryImage(self.image).build_url()
         elif self.image:
@@ -47,8 +53,10 @@ class Post(models.Model):
 # The comments model
 
 class Comment (models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()
     approved = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
