@@ -14,11 +14,8 @@ Why I Built It
 
 I wanted to create a space where developers can easily connect, share their knowledge, and help each other out. Building this forum was a chance for me to put my coding skills to the test and learn more about what it takes to make something useful and user-friendly.
 
-Image will be added here using.[amiresponsive](https://ui.dev/amiresponsive)
 
-Link to the live site here once deployed 
-
-
+Deployed site [CodeNest](https://code-nest-b4f5033f8eff.herokuapp.com/)
 
 ---
 
@@ -36,7 +33,6 @@ Link to the live site here once deployed
 * [Features](#features)
   * [General Features on Each Page](#general-features-on-each-page)
   * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
@@ -44,10 +40,6 @@ Link to the live site here once deployed
 
 * [Deployment & Local Development](#deployment--local-development)
   * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
-
 
     * [Bugs](#bugs)
 
@@ -147,57 +139,70 @@ Use this section to explain what sort of imagery you plan to use through your si
 ![Sign Up Page Wireframe](/Documentation/Sign%20Up%20page.jpg)
 ![Sign Up Page Wireframe](/Documentation/Post%20detail%20page.jpg)
 
+## ERD diagram
 
+![ERD](/Documentation/ERD.jpg)
 
 ## Features
 
-This section can be used to explain what pages your site is made up of.
+### General features
 
-### General features on each page
+CodeNest is set up as a community forum/blog with these main features:
 
-#### User Management
+**CRUD Functionality**
 
-More details to follow
+* A logged in user can create update and delete a post
+* A new user can create a new profile
+* Logged in users can update thier profile
+* A logged in user can create update and delete thier own comments
+* Vistors to the site can read posts, other users profiles and comments if they whish to create update and delete   thier own content then they must sign up.
 
-#### Community Engagement
+**User Authentication** 
 
-More details to follow
+There’s a Login/Signup option, and once signed in, a user can see their profile avatar & username in the navbar.
 
-#### Content Moderation
+**User Profiles** 
 
-More details to follow
+After logging in, a user can view and edit their profile details by clicking on their avatar and selecting the view profile or edit profile options, a logged in user can also view other users profiles by clicking on thier avatar if they have published a post.
 
-#### Accessibility
+**Post Creation** 
 
-More details to follow
+A “Create a Post” feature allows users to write a title, upload an optional image, and format their content with a WYSIWYG (Summernote) editor.
 
-Screen shots of each page here once finished [amiresponsive](https://ui.dev/amiresponsive) 
+**Navigation Bar** 
+
+The top navigation includes links to Home, Create a Post, and a user dropdown menu (Profile, Edit Profile, Logout).
+
+**Forum/Blog Home Page** 
+
+Displays a welcome message, posts with date, time, a breif extract from the post and the users username. Users and visitors can view these posts by either clicking on the title or the read post button. Logged in users will be able to comment on a post and have CRUD for thier comments as mentioned above. Visitors will only be able to read the post. 
+
 
 ### Future Implementations
 
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+I would like to implent this user story in the future to make it easier for new users to sign up. 
 
-### Accessibility
+As you can see from my Project board it was moved into the wont have section during development [Project Board](https://github.com/users/tomMckechnie-90/projects/10/views/1)
 
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
+![Social Media](/Documentation/Socail-media.jpg)
 
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
 
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
+**Search bar**
 
-Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
+I would also like to add a search funtionality for users and visitors to search for posts and other users.
+
+**Live notifications**
+
+Adding live notifications for users to be alerted when another user interacts with thier content.
 
 ## Technologies Used
-
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
 
 ### Languages Used
 
 * HTML
 * CSS
 * PYTHON
+* JavaScript
 
 ### Frameworks, Libraries & Programs Used
 
@@ -205,28 +210,22 @@ Code Institute have an amazing channel for all things accessibility (a11y-access
 * Bootstrap v5
 * GitHub
 * Balsamic
+* FontAwesome
 
-A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
+## The use of AGILE during development
 
-## Deployment & Local Development
+I used GitHub Projects as my Agile tool, creating a project board with columns like To Do, In Progress, bugs, wont have and Done. Each user story was added as an issue with the use of must have, should have and could have labels, and moved through the board as it was developed, tested, and completed. This gave me a clear, real-time view of progress which ensured each feature was documented and tracked from start to finish. 
 
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here]()
+[CodeNest Project Board](https://github.com/users/tomMckechnie-90/projects/10/views/1)
 
-### Deployment
+## Deployment
+1. Set DEBUG to false in settings.py
+2. Add, Commit and Push your code to GitHub
+3. Login to Heroku and click on the app you are developing via the dashboard
+4. Navigate to the deploy tab, make sure your Github repo is linked
+5. Finally click deploy branch making sure you have the main branch selected
 
-Include instructions here on how to deploy your project. 
-
-### Local Development
-
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
-
-#### How to Fork
-
-Place instructions on how to fork your project here.
-
-#### How to Clone
-
-Place instructions on how to clone your project here.
+Now your app should be deployed!
 
 ## Bugs
 ### Loading static bug
@@ -265,6 +264,10 @@ And yes it worked! Thank you AI.
 
 
 ## Testing and Validation
+
+### Responsive testing
+
+CodeNest is responsive and works across all devices without any issues. Feel free to test this via dev tools.
 
 ### Validating HTML CSS, Python and JavaScript
 
@@ -317,9 +320,11 @@ All my code now meets the PEP8 guidlines as you can from the screen shots below
 
 ![Python Validation](/Documentation/views.jpg)
 
- 
+## The use of AI during development
 
- ## Unit testing with AI
+I mainly used ChatGTP to assit me during development details on how AI helped can be seen in this section.
+
+ ### Unit testing with AI
 
 As well as some manual tests I ran unit testing on my forms.py file using Copilot in VS code
 
@@ -335,24 +340,36 @@ I ran the tests in the terminal and got a pass
 
 ![Unit Testing](/Documentation/results.jpg)
 
+### Code Creation with AI
+
+I used ChatGTP to assit me with creating the code for my User Profiles app, it helped me understand how the code worked and really sped up development time, I did not copy and paste any code it provided, I wrote it so I could get used to the syntax and get a better understanding of how all the functionality works. 
+
+### Debugging With AI
+
+AI was a big help on explaining an error pages that django threw at me during development, I copy and pasted any errors that stumped me and asked it to guide me through the troubleshooting. 
+
+### Perfomance and UX with AI
+
+I found that AI provided me with a nice flow of code through out development leading to a improved user experience.
+
+### A reflection on AI role during development
+
+AI was a huge help for me, It was like having a senior developer in the room who was always on hand to assit me.
+For me its biggest strength was catching any errors and helping with debugging, I would get AI to check my code for any errors daily as I am prone to a typo that can break your whole project!
+
+All in all AI played a vital role during this project and was a great learning tool. 
+
+Thank you AI!
+
+
 ## Credits
-
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
-
-The Credits section is where you can credit all the people and sources you used throughout your project.
 
 ### Code Used
 
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
+Credit goes to the code insitutes LMS content for the Django Blog code which I used as a template for my post and comment models. [I Think therfore I blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/824fccecd0fe4e44871eeabcbf69d830/)
 
-### Content
-
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
-
-###  Media
-
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
-  
 ###  Acknowledgments
 
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
+I would like to Aknowledge Amy, Vasi, Roo and Spencer for providing great advice through out this project and my time on the bootcamp. 
+
+Also my fellow students who are always on hand to offer advice! Thank you guys!
