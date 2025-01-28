@@ -264,15 +264,76 @@ And yes it worked! Thank you AI.
 ![Editing profile bug](/Documentation/Success%20message.jpg)
 
 
+## Testing and Validation
 
+### Validating HTML CSS, Python and JavaScript
 
-## Testing
+#### **HTML**
 
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
+I tested my HTML templates using the link below by clicking on the validate by direct input tab and copying my code into the input field and then clicking the check button.
 
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
-  
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+[HTML Validator](https://validator.w3.org/)
+
+As you can see from the image below I got some errors that relate to the use of summernote and cloudinary, as this was beyond my control I left my code as is. 
+
+I removed a few extra </P> and </div> tags that it spotted I left these in by mistake when editing my code throughout the project.
+
+![HTML Validation](/Documentation/HTML%20testing(summernote%20&%20cloudinary%20errors).jpg)
+
+#### **CSS**
+
+I tested my CSS using the link below by clicking on the validate by direct input tab and copy my code into the input field and then clicking the check button.
+
+[CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+No issues to report!
+
+![HTML Validation](/Documentation/CSS%20validation%20(Pass).jpg)
+
+#### **JavaScript**
+
+I tested my JavaScript my copying my code over to the link below, before running the tests I clicked on configure and checked New JavaScript features (ES6).
+
+[JavaScript Validator](https://jshint.com/)
+
+One issue came up, this was due to the use of bootstrap. This was beyond my control so I left the code as is.
+
+![JavaScript Validation](/Documentation/JavasScipt.jpg)
+
+#### **Python**
+I tested my python code using the link below
+
+[Python Validator](https://pep8ci.herokuapp.com/)
+
+All my code now meets the PEP8 guidlines as you can from the screen shots below
+
+![Python Validation](/Documentation/admin.jpg)
+
+![Python Validation](/Documentation/forms.jpg)
+
+![Python Validation](/Documentation/models.jpg)
+
+![Python Validation](/Documentation/urls.jpg)
+
+![Python Validation](/Documentation/views.jpg)
+
+ 
+
+ ## Unit testing with AI
+
+As well as some manual tests I ran unit testing on my forms.py file using Copilot in VS code
+
+I used a breif prompt 
+
+![Unit Testing](/Documentation/prompt.jpg)
+
+It gave me this code
+
+![Unit Testing](/Documentation/code.jpg)
+
+I ran the tests in the terminal and got a pass
+
+![Unit Testing](/Documentation/results.jpg)
 
 ## Credits
 
